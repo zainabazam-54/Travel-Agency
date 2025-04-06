@@ -1,0 +1,21 @@
+header{
+    display:none;
+    background-color:azure;
+    display:flex;
+    justify-content: center;
+}
+.navbar li,a{
+    list-style: none;
+    display: inline;
+    padding:0 30px;
+    color:navy;
+    font-weight: bold;
+}
+.navbar li a:hover{
+    color:darkcyan;
+}
+body{
+    margin:auto;
+    font-family: Arial, sans-serif;
+    background-color:white;
+}
