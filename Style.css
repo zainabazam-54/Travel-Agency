@@ -1,18 +1,25 @@
-header{
-    display:none;
-    background-color:azure;
-    display:flex;
-    justify-content: center;
+
+header {
+    display: flex;
+    font-family: Arial, sans-serif;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(1, 6, 73);
+    padding: 10px 30px;
+  }
+.logo img{
+    height: 120px;
 }
-.navbar li,a{
+.navbar ul,li,a{
+    display: flex;
+    gap: 25px;
     list-style: none;
-    display: inline;
-    padding:0 30px;
-    color:navy;
-    font-weight: bold;
+    text-decoration: none;
+    color:white;
+    font-weight:normal;
 }
 .navbar li a:hover{
-    color:darkcyan;
+    color:orange;
 }
 body{
     margin:auto;
