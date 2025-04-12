@@ -251,6 +251,56 @@
             text-align: center;
             color: white;
         }
+        
+        /* Additional style for price display */
+        .price-display {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        /* For responsive design on smaller screens */
+        @media (max-width: 1200px) {
+            .destination-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .destination-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .search-form {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .search-btn {
+                grid-column: span 2;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .destination-grid {
+                grid-template-columns: 1fr;
+            }
+            .search-form {
+                grid-template-columns: 1fr;
+            }
+            .search-btn {
+                grid-column: span 1;
+            }
+            header {
+                flex-direction: column;
+                padding: 20px;
+            }
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            nav ul li {
+                margin: 5px 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -267,25 +317,22 @@
             </ul>
         </nav>
     </header>
-
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Make your flight experience luxury with us</h1>
         </div>
     </section>
 
-    <!-- Search Form -->
     <section class="search-container">
         <form class="search-form">
             <div class="form-group">
                 <label for="from">From</label>
-                <input type="text" id="from" placeholder="Departure City">
+                <input type="text" id="from" placeholder="Jacksonville">
             </div>
             
             <div class="form-group">
                 <label for="to">To</label>
-                <input type="text" id="to" placeholder="Destination City">
+                <input type="text" id="to" placeholder="Atlanta">
             </div>
             
             <div class="form-group">
@@ -324,10 +371,10 @@
             <div class="form-group">
                 <label for="price-range">Price Range</label>
                 <div class="price-range">
-                    <input type="range" id="price-range" min="100" max="5000" step="100" value="1000" class="price-slider">
+                    <input type="range" id="price-range" name="price-range" min="100" max="5000" step="100" value="1000" class="price-slider" oninput="priceOutput.value = '$' + this.value">
+                    <output name="priceOutput" id="price-output" for="price-range">$1000</output>
                     <div class="price-labels">
                         <span>$100</span>
-                        <span id="price-value">$1000</span>
                         <span>$5000</span>
                     </div>
                 </div>
@@ -337,92 +384,83 @@
         </form>
     </section>
 
-    <!-- Popular Destinations -->
     <section class="destinations">
         <h2 class="section-title">Popular Flight Destinations</h2>
         <div class="destination-grid">
-            <!-- Destination 1 -->
             <div class="destination-card">
-                <div class="destination-img" style="background-image: url('paris.jpg');"></div>
+                <div class="destination-img" style="background-image: url('img/ummrah1.jpeg');"></div>
                 <div class="destination-info">
-                    <h3 class="destination-name">Paris, France</h3>
+                    <h3 class="destination-name">Saudia Arbia, Jeddah</h3>
                     <p class="destination-price">From $499</p>
                     <p class="destination-details">Explore the city of love with our special flight deals</p>
                     <button class="book-btn">Book Now</button>
                 </div>
             </div>
             
-            <!-- Destination 2 -->
             <div class="destination-card">
-                <div class="destination-img" style="background-image: url('dubai.jpg');"></div>
+                <div class="destination-img" style="background-image: url('img/hajj.jpeg');"></div>
                 <div class="destination-info">
-                    <h3 class="destination-name">Dubai, UAE</h3>
+                    <h3 class="destination-name">Sausia, Jeddah</h3>
                     <p class="destination-price">From $649</p>
-                    <p class="destination-details">Experience luxury in the heart of the desert</p>
+                    <p class="destination-details">Experience luxury of peace.</p>
                     <button class="book-btn">Book Now</button>
                 </div>
             </div>
-            
-            <!-- Destination 3 -->
+
             <div class="destination-card">
-                <div class="destination-img" style="background-image: url('tokyo.jpg');"></div>
+                <div class="destination-img" style="background-image: url('img/atlanta.jpeg');"></div>
                 <div class="destination-info">
-                    <h3 class="destination-name">Tokyo, Japan</h3>
+                    <h3 class="destination-name">Gorgia, Atlanta</h3>
                     <p class="destination-price">From $799</p>
                     <p class="destination-details">Discover the perfect blend of tradition and innovation</p>
                     <button class="book-btn">Book Now</button>
                 </div>
             </div>
-            
-            <!-- Destination 4 -->
+
             <div class="destination-card">
-                <div class="destination-img" style="background-image: url('new-york.jpg');"></div>
+                <div class="destination-img" style="background-image: url('img/jacksonvilla.jpeg');"></div>
                 <div class="destination-info">
-                    <h3 class="destination-name">New York, USA</h3>
+                    <h3 class="destination-name">FLorida, Jacksonvilla</h3>
                     <p class="destination-price">From $459</p>
                     <p class="destination-details">The city that never sleeps awaits your arrival</p>
                     <button class="book-btn">Book Now</button>
                 </div>
             </div>
-            
-            <!-- Destination 5 -->
+
             <div class="destination-card">
-                <div class="destination-img" style="background-image: url('bali.jpg');"></div>
+                <div class="destination-img" style="background-image: url('img/Los\ Angeles.jpeg');"></div>
                 <div class="destination-info">
-                    <h3 class="destination-name">Bali, Indonesia</h3>
+                    <h3 class="destination-name">California, Los Angeles</h3>
                     <p class="destination-price">From $729</p>
                     <p class="destination-details">Relax on stunning beaches and explore ancient temples</p>
                     <button class="book-btn">Book Now</button>
                 </div>
             </div>
-            
-            <!-- Destination 6 -->
+   
             <div class="destination-card">
-                <div class="destination-img" style="background-image: url('rome.jpg');"></div>
+                <div class="destination-img" style="background-image: url('img/huston.jpeg');"></div>
                 <div class="destination-info">
-                    <h3 class="destination-name">Rome, Italy</h3>
+                    <h3 class="destination-name">Taxes, Huston</h3>
                     <p class="destination-price">From $529</p>
                     <p class="destination-details">Step back in time in the eternal city</p>
                     <button class="book-btn">Book Now</button>
                 </div>
             </div>
-            
-            <!-- Destination 7 -->
+    
             <div class="destination-card">
-                <div class="destination-img" style="background-image: url('sydney.jpg');"></div>
+                <div class="destination-img" style="background-image: url('img/Washington\ DC.jpeg');"></div>
                 <div class="destination-info">
-                    <h3 class="destination-name">Sydney, Australia</h3>
+                    <h3 class="destination-name">US, Washington</h3>
                     <p class="destination-price">From $899</p>
                     <p class="destination-details">Experience the vibrant culture down under</p>
                     <button class="book-btn">Book Now</button>
                 </div>
             </div>
             
-            <!-- Destination 8 -->
             <div class="destination-card">
-                <div class="destination-img" style="background-image: url('cancun.jpg');"></div>
+                <div class="destination-img" style="background-image: url('img/miami.jpeg');"></div>
                 <div class="destination-info">
-                    <h3 class="destination-name">Cancun, Mexico</h3>
+                    <h3 class="destination-name">FLorida, Miami</h3>
                     <p class="destination-price">From $399</p>
                     <p class="destination-details">Pristine beaches and crystal clear waters await</p>
                     <button class="book-btn">Book Now</button>
@@ -431,19 +469,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Toury. All rights reserved.</p>
     </footer>
-
-    <script>
-        // JavaScript for price range display
-        const priceSlider = document.getElementById('price-range');
-        const priceValue = document.getElementById('price-value');
-        
-        priceSlider.addEventListener('input', function() {
-            priceValue.textContent = '$' + this.value;
-        });
-    </script>
 </body>
 </html>
