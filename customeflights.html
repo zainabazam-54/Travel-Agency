@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights - Toury</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+        
+        header {
+            background-color: rgb(1, 6, 73);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 150px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ff9d00;
+        }
+        
+        .hero {
+            background-image: url("img/custome.jpeg");
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .search-container {
+            background-color: rgba(1, 6, 73, 0.85);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 1200px;
+            margin: -50px auto 50px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .search-form {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .price-range {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .price-slider {
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .price-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+        
+        .search-btn {
+            grid-column: span 3;
+            background-color: #ff9d00;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+        
+        .search-btn:hover {
+            background-color: #e08900;
+        }
+        .destinations {
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: rgb(1, 6, 73);
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 25px;
+        }
+        
+        .destination-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .destination-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .destination-info {
+            padding: 20px;
+            color: #333;
+        }
+        
+        .destination-name {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: rgb(1, 6, 73);
+        }
+        
+        .destination-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff9d00;
+            margin-bottom: 10px;
+        }
+        
+        .destination-details {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .book-btn {
+            background-color: rgb(1, 6, 73);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        
+        .book-btn:hover {
+            background-color: rgb(3, 12, 121);
+        }
+        
+        .radio-group {
+            display: flex;
+            margin-top: 10px;
+        }
+        
+        .radio-option {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .radio-option input {
+            margin-right: 5px;
+            width: auto;
+        }
+        
+        footer {
+            background-color: rgb(1, 6, 73);
+            padding: 30px 50px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/TA Logo.png" alt="Toury Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="flights.html">Flights</a></li>
+                <li><a href="">Tours</a></li>
+                <li><a href="Packages.html">Packages</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="Contact Us.html">Contact Us</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Make your flight experience luxury with us</h1>
+        </div>
+    </section>
+
+    <!-- Search Form -->
+    <section class="search-container">
+        <form class="search-form">
+            <div class="form-group">
+                <label for="from">From</label>
+                <input type="text" id="from" placeholder="Departure City">
+            </div>
+            
+            <div class="form-group">
+                <label for="to">To</label>
+                <input type="text" id="to" placeholder="Destination City">
+            </div>
+            
+            <div class="form-group">
+                <label for="departure-date">Departure Date</label>
+                <input type="date" id="departure-date">
+            </div>
+            
+            <div class="form-group">
+                <label for="return-date">Return Date</label>
+                <input type="date" id="return-date">
+            </div>
+            
+            <div class="form-group">
+                <label for="passengers">Passengers</label>
+                <select id="passengers">
+                    <option value="1">1 Passenger</option>
+                    <option value="2">2 Passengers</option>
+                    <option value="3">3 Passengers</option>
+                    <option value="4">4 Passengers</option>
+                    <option value="5">5+ Passengers</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Class</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="class" value="economy" checked> Economy
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="class" value="business"> Business
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="price-range">Price Range</label>
+                <div class="price-range">
+                    <input type="range" id="price-range" min="100" max="5000" step="100" value="1000" class="price-slider">
+                    <div class="price-labels">
+                        <span>$100</span>
+                        <span id="price-value">$1000</span>
+                        <span>$5000</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="search-btn">Search Flights</button>
+        </form>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="destinations">
+        <h2 class="section-title">Popular Flight Destinations</h2>
+        <div class="destination-grid">
+            <!-- Destination 1 -->
+            <div class="destination-card">
+                <div class="destination-img" style="background-image: url('paris.jpg');"></div>
+                <div class="destination-info">
+                    <h3 class="destination-name">Paris, France</h3>
+                    <p class="destination-price">From $499</p>
+                    <p class="destination-details">Explore the city of love with our special flight deals</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+            
+            <!-- Destination 2 -->
+            <div class="destination-card">
+                <div class="destination-img" style="background-image: url('dubai.jpg');"></div>
+                <div class="destination-info">
+                    <h3 class="destination-name">Dubai, UAE</h3>
+                    <p class="destination-price">From $649</p>
+                    <p class="destination-details">Experience luxury in the heart of the desert</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+            
+            <!-- Destination 3 -->
+            <div class="destination-card">
+                <div class="destination-img" style="background-image: url('tokyo.jpg');"></div>
+                <div class="destination-info">
+                    <h3 class="destination-name">Tokyo, Japan</h3>
+                    <p class="destination-price">From $799</p>
+                    <p class="destination-details">Discover the perfect blend of tradition and innovation</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+            
+            <!-- Destination 4 -->
+            <div class="destination-card">
+                <div class="destination-img" style="background-image: url('new-york.jpg');"></div>
+                <div class="destination-info">
+                    <h3 class="destination-name">New York, USA</h3>
+                    <p class="destination-price">From $459</p>
+                    <p class="destination-details">The city that never sleeps awaits your arrival</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+            
+            <!-- Destination 5 -->
+            <div class="destination-card">
+                <div class="destination-img" style="background-image: url('bali.jpg');"></div>
+                <div class="destination-info">
+                    <h3 class="destination-name">Bali, Indonesia</h3>
+                    <p class="destination-price">From $729</p>
+                    <p class="destination-details">Relax on stunning beaches and explore ancient temples</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+            
+            <!-- Destination 6 -->
+            <div class="destination-card">
+                <div class="destination-img" style="background-image: url('rome.jpg');"></div>
+                <div class="destination-info">
+                    <h3 class="destination-name">Rome, Italy</h3>
+                    <p class="destination-price">From $529</p>
+                    <p class="destination-details">Step back in time in the eternal city</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+            
+            <!-- Destination 7 -->
+            <div class="destination-card">
+                <div class="destination-img" style="background-image: url('sydney.jpg');"></div>
+                <div class="destination-info">
+                    <h3 class="destination-name">Sydney, Australia</h3>
+                    <p class="destination-price">From $899</p>
+                    <p class="destination-details">Experience the vibrant culture down under</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+            
+            <!-- Destination 8 -->
+            <div class="destination-card">
+                <div class="destination-img" style="background-image: url('cancun.jpg');"></div>
+                <div class="destination-info">
+                    <h3 class="destination-name">Cancun, Mexico</h3>
+                    <p class="destination-price">From $399</p>
+                    <p class="destination-details">Pristine beaches and crystal clear waters await</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Toury. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for price range display
+        const priceSlider = document.getElementById('price-range');
+        const priceValue = document.getElementById('price-value');
+        
+        priceSlider.addEventListener('input', function() {
+            priceValue.textContent = '$' + this.value;
+        });
+    </script>
+</body>
+</html>
