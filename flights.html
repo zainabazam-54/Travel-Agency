@@ -150,19 +150,34 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
-        .city-header {
+        .city-card details {
+            width: 100%;
+        }
+        
+        .city-card summary {
             display: flex;
             justify-content: space-between;
             padding: 15px;
             cursor: pointer;
             border-bottom: 1px solid #eee;
             background-color: rgba(1, 6, 73, 0.05);
-        }
-        
-        .city-name {
             font-size: 1.2rem;
             font-weight: bold;
             color: #333;
+            list-style: none;
+        }
+        
+        .city-card summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        .city-card summary::after {
+            content: "▼";
+            transition: transform 0.3s;
+        }
+        
+        .city-card details[open] summary::after {
+            transform: rotate(180deg);
         }
         
         .links {
@@ -181,17 +196,6 @@
             text-decoration: underline;
         }
         
-        .dropdown-content {
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        
-        .dropdown-content.active {
-            max-height: 500px;
-        }
-        
         .flight-item {
             display: flex;
             justify-content: space-between;
@@ -206,14 +210,6 @@
         .price {
             font-weight: bold;
             color: #ff9d00;
-        }
-        
-        .arrow {
-            transition: transform 0.3s;
-        }
-        
-        .arrow.up {
-            transform: rotate(180deg);
         }
         
         /* Footer */
@@ -259,10 +255,10 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Flights</a></li>
+                <li><a href="flights.html">Flights</a></li>
                 <li><a href="#">Tours</a></li>
-                <li><a href="#">Packages</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="Packages.html">Packages</a></li>
+                <li><a href="login.html">Login</a></li>
                 <li><a href="Aboutus.html">About Us</a></li>
             </ul>
         </nav>
@@ -272,28 +268,22 @@
         <h1>Make your flight experience luxury with us</h1>
     </section>
     
-    <!-- Custom Flights Banner -->
     <section class="custom-flights-banner">
         <h2>Looking for specific flights? Create your custom travel plan</h2>
-        <a href="custom-flights.html"><button class="custom-flights-btn">Custom Flights</button></a>
+        <a href="customeflights.html"><button class="custom-flights-btn">Custom Flights</button></a>
     </section>
     
-    <!-- Popular Routes Section -->
     <h2 class="section-title">Popular Flight Routes</h2>
     
     <section class="destinations">
-        <!-- Jacksonville -->
         <div class="city-card">
-            <div class="city-header" onclick="toggleDropdown(this)">
-                <span class="city-name">Jacksonville</span>
-                <span class="arrow">▼</span>
-            </div>
-            <div class="links">
-                <a href="#">Flights</a>
-                <a href="#">Cars</a>
-                <a href="#">Hotels</a>
-            </div>
-            <div class="dropdown-content">
+            <details>
+                <summary>Jacksonville</summary>
+                <div class="links">
+                    <a href="flights.html">Flights</a>
+                    <a href="#">Cars</a>
+                    <a href="#">Hotels</a>
+                </div>
                 <div class="flight-item">
                     <span>Flights from Miami to Jacksonville</span>
                     <span class="price">$89</span>
@@ -310,21 +300,17 @@
                     <span>Flights from Dallas to Jacksonville</span>
                     <span class="price">$195</span>
                 </div>
-            </div>
+            </details>
         </div>
         
-        <!-- Atlanta -->
         <div class="city-card">
-            <div class="city-header" onclick="toggleDropdown(this)">
-                <span class="city-name">Atlanta</span>
-                <span class="arrow">▼</span>
-            </div>
-            <div class="links">
-                <a href="#">Flights</a>
-                <a href="#">Cars</a>
-                <a href="#">Hotels</a>
-            </div>
-            <div class="dropdown-content">
+            <details>
+                <summary>Atlanta</summary>
+                <div class="links">
+                    <a href="flights.html">Flights</a>
+                    <a href="#">Cars</a>
+                    <a href="#">Hotels</a>
+                </div>
                 <div class="flight-item">
                     <span>Flights from New York to Atlanta</span>
                     <span class="price">$145</span>
@@ -341,21 +327,17 @@
                     <span>Flights from Miami to Atlanta</span>
                     <span class="price">$112</span>
                 </div>
-            </div>
+            </details>
         </div>
-        
-        <!-- Los Angeles -->
+
         <div class="city-card">
-            <div class="city-header" onclick="toggleDropdown(this)">
-                <span class="city-name">Los Angeles</span>
-                <span class="arrow">▼</span>
-            </div>
-            <div class="links">
-                <a href="#">Flights</a>
-                <a href="#">Cars</a>
-                <a href="#">Hotels</a>
-            </div>
-            <div class="dropdown-content">
+            <details>
+                <summary>Los Angeles</summary>
+                <div class="links">
+                    <a href="flights.html">Flights</a>
+                    <a href="#">Cars</a>
+                    <a href="#">Hotels</a>
+                </div>
                 <div class="flight-item">
                     <span>Flights from Atlanta to Los Angeles</span>
                     <span class="price">$199</span>
@@ -372,21 +354,17 @@
                     <span>Flights from Dallas to Los Angeles</span>
                     <span class="price">$162</span>
                 </div>
-            </div>
+            </details>
         </div>
-        
-        <!-- Houston -->
+
         <div class="city-card">
-            <div class="city-header" onclick="toggleDropdown(this)">
-                <span class="city-name">Houston</span>
-                <span class="arrow">▼</span>
-            </div>
-            <div class="links">
-                <a href="#">Flights</a>
-                <a href="#">Cars</a>
-                <a href="#">Hotels</a>
-            </div>
-            <div class="dropdown-content">
+            <details>
+                <summary>Houston</summary>
+                <div class="links">
+                    <a href="flights.html">Flights</a>
+                    <a href="#">Cars</a>
+                    <a href="#">Hotels</a>
+                </div>
                 <div class="flight-item">
                     <span>Flights from Chicago to Houston</span>
                     <span class="price">$154</span>
@@ -403,21 +381,17 @@
                     <span>Flights from Denver to Houston</span>
                     <span class="price">$131</span>
                 </div>
-            </div>
+            </details>
         </div>
         
-        <!-- Miami -->
         <div class="city-card">
-            <div class="city-header" onclick="toggleDropdown(this)">
-                <span class="city-name">Miami</span>
-                <span class="arrow">▼</span>
-            </div>
-            <div class="links">
-                <a href="#">Flights</a>
-                <a href="#">Cars</a>
-                <a href="#">Hotels</a>
-            </div>
-            <div class="dropdown-content">
+            <details>
+                <summary>Miami</summary>
+                <div class="links">
+                    <a href="flights.html">Flights</a>
+                    <a href="#">Cars</a>
+                    <a href="#">Hotels</a>
+                </div>
                 <div class="flight-item">
                     <span>Flights from New York to Miami</span>
                     <span class="price">$142</span>
@@ -434,21 +408,17 @@
                     <span>Flights from Dallas to Miami</span>
                     <span class="price">$157</span>
                 </div>
-            </div>
+            </details>
         </div>
-        
-        <!-- Washington -->
+
         <div class="city-card">
-            <div class="city-header" onclick="toggleDropdown(this)">
-                <span class="city-name">Washington</span>
-                <span class="arrow">▼</span>
-            </div>
-            <div class="links">
-                <a href="#">Flights</a>
-                <a href="#">Cars</a>
-                <a href="#">Hotels</a>
-            </div>
-            <div class="dropdown-content">
+            <details>
+                <summary>Washington</summary>
+                <div class="links">
+                    <a href="flights.html">Flights</a>
+                    <a href="#">Cars</a>
+                    <a href="#">Hotels</a>
+                </div>
                 <div class="flight-item">
                     <span>Flights from Boston to Washington</span>
                     <span class="price">$109</span>
@@ -465,23 +435,12 @@
                     <span>Flights from Seattle to Washington</span>
                     <span class="price">$276</span>
                 </div>
-            </div>
+            </details>
         </div>
     </section>
     
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Toury. All rights reserved.</p>
     </footer>
-    
-    <script>
-        function toggleDropdown(element) {
-            const dropdown = element.parentElement.querySelector('.dropdown-content');
-            const arrow = element.querySelector('.arrow');
-            
-            dropdown.classList.toggle('active');
-            arrow.classList.toggle('up');
-        }
-    </script>
 </body>
 </html>
