@@ -84,6 +84,49 @@
             max-width: 80%;
         }
         
+        /* Custom Flights Search Banner */
+        .custom-flights-banner {
+            background-color: rgb(1, 6, 73);
+            color: white;
+            padding: 15px 30px;
+            margin: 20px auto;
+            max-width: 1200px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .custom-flights-banner h2 {
+            margin: 0;
+            font-size: 1.4rem;
+        }
+        
+        .custom-flights-btn {
+            background-color: #ff9d00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .custom-flights-btn:hover {
+            background-color: #e08900;
+        }
+        
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            color: rgb(1, 6, 73);
+            font-size: 1.8rem;
+            margin: 30px 0 20px;
+        }
+        
         .destinations {
             max-width: 1200px;
             margin: 20px auto;
@@ -99,6 +142,12 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .city-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         .city-header {
@@ -107,6 +156,7 @@
             padding: 15px;
             cursor: pointer;
             border-bottom: 1px solid #eee;
+            background-color: rgba(1, 6, 73, 0.05);
         }
         
         .city-name {
@@ -125,6 +175,10 @@
         .links a {
             color: #0066cc;
             text-decoration: none;
+        }
+        
+        .links a:hover {
+            text-decoration: underline;
         }
         
         .dropdown-content {
@@ -151,7 +205,7 @@
         
         .price {
             font-weight: bold;
-            color: #333;
+            color: #ff9d00;
         }
         
         .arrow {
@@ -162,6 +216,15 @@
             transform: rotate(180deg);
         }
         
+        /* Footer */
+        footer {
+            background-color: rgb(1, 6, 73);
+            padding: 20px;
+            color: white;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
         @media (max-width: 768px) {
             .destinations {
                 grid-template-columns: repeat(2, 1fr);
@@ -169,6 +232,12 @@
             
             .hero h1 {
                 font-size: 2rem;
+            }
+            
+            .custom-flights-banner {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
             }
         }
         
@@ -202,6 +271,15 @@
     <section class="hero">
         <h1>Make your flight experience luxury with us</h1>
     </section>
+    
+    <!-- Custom Flights Banner -->
+    <section class="custom-flights-banner">
+        <h2>Looking for specific flights? Create your custom travel plan</h2>
+        <a href="custom-flights.html"><button class="custom-flights-btn">Custom Flights</button></a>
+    </section>
+    
+    <!-- Popular Routes Section -->
+    <h2 class="section-title">Popular Flight Routes</h2>
     
     <section class="destinations">
         <!-- Jacksonville -->
@@ -390,6 +468,11 @@
             </div>
         </div>
     </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Toury. All rights reserved.</p>
+    </footer>
     
     <script>
         function toggleDropdown(element) {
