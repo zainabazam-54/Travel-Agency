@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toury - Flight Bookings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: rgb(1, 6, 73);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 120px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        .hero {
+            background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)),
+    url('img/Airplane_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-repeat: no-repeat;
+    display: flex;
+    height: 80vh;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align:center ;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+        
+        .destinations {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 0 20px;
+        }
+        
+        .city-card {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .city-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .city-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .links {
+            display: flex;
+            gap: 15px;
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .links a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        .dropdown-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .dropdown-content.active {
+            max-height: 500px;
+        }
+        
+        .flight-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .flight-item:last-child {
+            border-bottom: none;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .arrow {
+            transition: transform 0.3s;
+        }
+        
+        .arrow.up {
+            transform: rotate(180deg);
+        }
+        
+        @media (max-width: 768px) {
+            .destinations {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .destinations {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/TA Logo.png" alt="Toury Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Flights</a></li>
+                <li><a href="#">Tours</a></li>
+                <li><a href="#">Packages</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="Aboutus.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Make your flight experience luxury with us</h1>
+    </section>
+    
+    <section class="destinations">
+        <!-- Jacksonville -->
+        <div class="city-card">
+            <div class="city-header" onclick="toggleDropdown(this)">
+                <span class="city-name">Jacksonville</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="links">
+                <a href="#">Flights</a>
+                <a href="#">Cars</a>
+                <a href="#">Hotels</a>
+            </div>
+            <div class="dropdown-content">
+                <div class="flight-item">
+                    <span>Flights from Miami to Jacksonville</span>
+                    <span class="price">$89</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from Atlanta to Jacksonville</span>
+                    <span class="price">$129</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from New York to Jacksonville</span>
+                    <span class="price">$178</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from Dallas to Jacksonville</span>
+                    <span class="price">$195</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Atlanta -->
+        <div class="city-card">
+            <div class="city-header" onclick="toggleDropdown(this)">
+                <span class="city-name">Atlanta</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="links">
+                <a href="#">Flights</a>
+                <a href="#">Cars</a>
+                <a href="#">Hotels</a>
+            </div>
+            <div class="dropdown-content">
+                <div class="flight-item">
+                    <span>Flights from New York to Atlanta</span>
+                    <span class="price">$145</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from Los Angeles to Atlanta</span>
+                    <span class="price">$219</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from Chicago to Atlanta</span>
+                    <span class="price">$138</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from Miami to Atlanta</span>
+                    <span class="price">$112</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Los Angeles -->
+        <div class="city-card">
+            <div class="city-header" onclick="toggleDropdown(this)">
+                <span class="city-name">Los Angeles</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="links">
+                <a href="#">Flights</a>
+                <a href="#">Cars</a>
+                <a href="#">Hotels</a>
+            </div>
+            <div class="dropdown-content">
+                <div class="flight-item">
+                    <span>Flights from Atlanta to Los Angeles</span>
+                    <span class="price">$199</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from Detroit to Los Angeles</span>
+                    <span class="price">$171</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from Denver to Los Angeles</span>
+                    <span class="price">$97</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from Dallas to Los Angeles</span>
+                    <span class="price">$162</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Houston -->
+        <div class="city-card">
+            <div class="city-header" onclick="toggleDropdown(this)">
+                <span class="city-name">Houston</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="links">
+                <a href="#">Flights</a>
+                <a href="#">Cars</a>
+                <a href="#">Hotels</a>
+            </div>
+            <div class="dropdown-content">
+                <div class="flight-item">
+                    <span>Flights from Chicago to Houston</span>
+                    <span class="price">$154</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from New York to Houston</span>
+                    <span class="price">$187</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from Los Angeles to Houston</span>
+                    <span class="price">$145</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from Denver to Houston</span>
+                    <span class="price">$131</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Miami -->
+        <div class="city-card">
+            <div class="city-header" onclick="toggleDropdown(this)">
+                <span class="city-name">Miami</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="links">
+                <a href="#">Flights</a>
+                <a href="#">Cars</a>
+                <a href="#">Hotels</a>
+            </div>
+            <div class="dropdown-content">
+                <div class="flight-item">
+                    <span>Flights from New York to Miami</span>
+                    <span class="price">$142</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from Chicago to Miami</span>
+                    <span class="price">$167</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from Los Angeles to Miami</span>
+                    <span class="price">$243</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from Dallas to Miami</span>
+                    <span class="price">$157</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Washington -->
+        <div class="city-card">
+            <div class="city-header" onclick="toggleDropdown(this)">
+                <span class="city-name">Washington</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="links">
+                <a href="#">Flights</a>
+                <a href="#">Cars</a>
+                <a href="#">Hotels</a>
+            </div>
+            <div class="dropdown-content">
+                <div class="flight-item">
+                    <span>Flights from Boston to Washington</span>
+                    <span class="price">$109</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from Chicago to Washington</span>
+                    <span class="price">$139</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from Los Angeles to Washington</span>
+                    <span class="price">$223</span>
+                </div>
+                <div class="flight-item">
+                    <span>Flights from Seattle to Washington</span>
+                    <span class="price">$276</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function toggleDropdown(element) {
+            const dropdown = element.parentElement.querySelector('.dropdown-content');
+            const arrow = element.querySelector('.arrow');
+            
+            dropdown.classList.toggle('active');
+            arrow.classList.toggle('up');
+        }
+    </script>
+</body>
+</html>
