@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Toury Travel Agency</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .topheader {
+            background-color: rgb(1, 6, 73);
+            color: white;
+            padding: 10px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .topheader .socials a {
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: opacity 0.3s;
+        }
+        .topheader .socials a:hover {
+            opacity: 0.8;
+        }
+
+        .logo img {
+            height: 120px;
+        }
+        .hero {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .hero-title {
+            font-size: 64px;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        .content h2 {
+            color: #001f4d;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+        .content p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        .about-section {
+            margin-bottom: 40px;
+        }
+        .about-section h3 {
+            color: rgb(1, 6, 73);
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        .privacy-policy {
+            background-color: #f5f5f5;
+            padding: 50px 20px;
+        }
+        .privacy-policy h2 {
+            text-align: center;
+            color:rgb(1, 6, 73);
+        }
+        .privacy-policy-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .privacy-section {
+            margin-bottom: 30px;
+        }
+        .privacy-section h3 {
+            color: #00408b;
+            margin-bottom: 15px;
+        }
+        .privacy-section ul {
+            padding-left: 20px;
+        }
+        .privacy-section li {
+            margin-bottom: 8px;
+        }
+        footer {
+            background-color: rgb(1, 6, 73);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header class="topheader">
+        <div class="logo">
+            <img src="img/TA logo.png" alt="Toury Travel Agency Logo">
+        </div>
+        <div class="socials">
+            <a href="https://instagram.com">Instagram</a>
+            <a href="https://facebook.com">Facebook</a>
+            <a href="https://twitter.com">Twitter</a>
+        </div>
+    </header>
+    <section class="hero">
+        <img src="img/map.jpeg" alt="World Map" class="hero-image">
+        <div class="hero-overlay">
+            <h1 class="hero-title">About Us</h1>
+        </div>
+    </section>
+    <section class="content">
+        <div class="about-section">
+            <h2>Welcome to Toury Travel Agency</h2>
+            <p>Toury Travel Agency was founded in 2025 with a vision to make global travel experiences more accessible, enjoyable, and memorable for travelers worldwide. We are dedicated to connecting people with incredible destinations across the globe and helping them create memories that will last a lifetime.</p>
+            <p>Our team of experienced travel consultants specializes in crafting personalized journeys that cater to your specific needs and preferences. With our deep knowledge of destinations, local customs, and insider tips, we ensure that your travel experience is both enriching and comfortable.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <p>At Toury, our mission is to facilitate transformative travel experiences by providing exceptional services that prioritize safety, comfort, and authentic adventures. We strive to make global exploration accessible to all travelers, regardless of their background or experience with international travel.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Why Choose Us</h2>
+            <p>With Toury, you gain access to:</p>
+            <p>• Expert travel consultants with extensive destination knowledge<br>
+            • Carefully selected accommodations to suit your budget and preferences<br>
+            • Local tour guides who provide authentic cultural insights<br>
+            • 24/7 support throughout your journey<br>
+            • Competitive pricing with transparent policies<br>
+            • Personalized itineraries that respect your interests, pace, and budget</p>
+        </div>
+    </section>
+    <section class="privacy-policy" id="privacy">
+        <h2>PRIVACY POLICY</h2>
+        <div class="privacy-policy-content">
+            <p>At Toury Travel Agency, your privacy is our priority. This Privacy Policy explains how we collect, use, and protect your personal information when you use our website and services.</p>
+            
+            <div class="privacy-section">
+                <h3>1. Information We Collect</h3>
+                <p>We may collect the following information:</p>
+                <ul>
+                    <li>Full name</li>
+                    <li>Email address</li>
+                    <li>Phone number</li>
+                    <li>Passport details (for booking international travel)</li>
+                    <li>Payment details</li>
+                    <li>Travel preferences and history</li>
+                    <li>Accommodation requirements</li>
+                    <li>Dietary restrictions and preferences</li>
+                </ul>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>2. How We Use Your Information</h3>
+                <p>We use your data to:</p>
+                <ul>
+                    <li>Process flight, hotel, and tour bookings</li>
+                    <li>Process payments securely</li>
+                    <li>Send booking confirmations and travel updates</li>
+                    <li>Communicate with airlines, hotels, and tour operators on your behalf</li>
+                    <li>Respond to your inquiries and customer support requests</li>
+                    <li>Improve our services and personalize your experience</li>
+                    <li>Send relevant travel recommendations (only with your permission)</li>
+                    <li>Send marketing emails about special offers (only with your permission)</li>
+                </ul>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>3. Data Protection</h3>
+                <p>We implement industry-standard security measures including encryption and secure servers to protect your personal information. Only authorized employees have access to your data on a need-to-know basis.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>4. Sharing Your Information</h3>
+                <p>We do not sell or rent your personal information. We may share your data with:</p>
+                <ul>
+                    <li>Airlines, hotels, and tour operators (only as needed for your booking)</li>
+                    <li>Payment processors (for transaction purposes only)</li>
+                    <li>Legal authorities if required by law</li>
+                </ul>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>5. Cookies</h3>
+                <p>Our website uses cookies to improve user experience, remember preferences, and analyze traffic patterns. You can manage cookie settings through your browser at any time.</p>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>6. Your Rights</h3>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access the personal data we hold about you</li>
+                    <li>Request correction of inaccurate information</li>
+                    <li>Request deletion of your data (where legally possible)</li>
+                    <li>Opt-out of marketing communications</li>
+                    <li>Lodge a complaint with a supervisory authority</li>
+                </ul>
+            </div>
+            
+            <div class="privacy-section">
+                <h3>7. Children's Privacy</h3>
+                <p>Our services are not intended for individuals under 13. We do not knowingly collect personal information from children without parental consent.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Toury Travel Agency. All rights reserved.</p>
+    </footer>
+</body>
+</html>
