@@ -1,0 +1,231 @@
+<!--ZAINAB AZAM
+22008105031-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            font-family: Arial, sans-serif;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgb(1, 6, 73);
+            padding: 10px 30px;
+            height: 120px;
+        }
+
+        .logo img {
+            height: 120px;
+        }
+
+        .navbar ul {
+            display: flex;
+            padding-left: 0;
+        }
+
+        .navbar li {
+            list-style: none;
+            margin-right: 20px;
+        }
+
+        .navbar a {
+            display: flex;
+            gap: 25px;
+            color: white;
+            font-weight: normal;
+            text-decoration: none;
+        }
+
+        .navbar li a:hover {
+            color: orange;
+        }
+        body {
+    margin: 0;
+    padding: 0;
+}
+
+
+        .packages-details {
+
+            display: block;
+            padding: 30px;
+            max-width: 1000px;
+            margin: auto;
+            justify-content: center;
+            left: 50px;
+        }
+
+        .package-details h2 {
+            margin-top: 30px;
+            font-size: 28px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .package-details p {
+            font-size: 18px;
+            margin-top: 30px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .packages-container {
+
+            display: flex;
+            gap: 30px;
+            padding: 30px;
+            max-width: 1000px;
+            margin: auto;
+            justify-content: center;
+            left: 50px;
+        }
+
+        .product-card {
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            width: 100%;
+            text-align: center;
+            max-width: 320px;
+            padding: 15px;
+        }
+
+        .product-card img {
+            object-fit: cover;
+            height: 500px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .product-card h3 {
+            font-weight: bold;
+            font-size: 20px;
+            text-align: auto;
+            color: rgb(1, 6, 73);
+        }
+
+        .product-card ul {
+            margin-top: 10px;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        .product-card li {
+            list-style-position: disc inside;
+            list-style: disc;
+        }
+
+        .product-card a {
+            text-decoration: none;
+            font-size: 16px;
+            color: black;
+        }
+
+        footer {
+            background-color: rgb(1, 6, 73);
+            color: white;
+            text-align: center;
+            padding: 20px;
+
+        }
+
+        @media(max-width:768px){
+            header{
+                flex-direction: column;
+                height:auto;
+                text-align: center;
+            }
+            .navbar ul{
+                flex-direction: column;
+                gap:10px;
+                margin-top: 10px;
+            }
+            .package-details h2{
+                font-size:24px;
+            }
+            .packages-container{
+                flex-direction: column;
+                padding:20px;
+            }
+            .product-card{
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<header>
+    <div class=logo><img src="img/TA logo.png" alt="Toury logo"></div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="Homepage.html">Home</a></li>
+            <li><a href="flights.html">Flight</a></li>
+            <li><a href="Packages.html">Packages</a></li>
+            <li><a href="login.html">Login </a></li>
+            <li><a href="Contact Us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<body>
+    <div class="package-details">
+        <h2>Toury is presenting Umrah Packages for All Muslims.</h2>
+        <p>Umrah is scared ritual in Islam which millions of Muslims across the world do every year.<br> This year,
+            perform this sacred obligation with amazing facilities provided by Toury.
+            <br> We bring Umrah Packages and Hajj packagesfor every fellow muslims in three different categrories
+        </p>
+
+    </div>
+    <section class="packages-container">
+        <div class="product-card">
+            <img src="img/umrah_pkg1.png" alt="Package 1">
+
+            <h3>Package 1</h3>
+            <ul>
+                <li><a href="#">299K per person</a></li>
+                <li><a href="#">Visa: Included</a></li>
+                <li><a href="#">Air Ticket: Not Included</a></li>
+                <li><a href="#">3 Star Hotels</a></li>
+            </ul>
+        </div>
+
+        <div class="product-card">
+            <img src="imG/umrah_package_poster_2_cropped.jpg" alt="Package 1">
+            <h3>Package 2</h3>
+            <ul>
+                <li><a href="">449K per person</a></li>
+                <li><a href="">Visa: Included</a></li>
+                <li><a href="">Air Ticket: Included</a></li>
+                <li><a href="">4 Star Hotels</a></li>
+            </ul>
+        </div>
+        <div class="product-card">
+            <img src="img/umrah_package_poster_3.jpg" alt="Package 1">
+            <h3>Package 3</h3>
+            <ul>
+                <li><a href="">599K per person</a></li>
+                <li><a href="">Visa: Not Included</a></li>
+                <li><a href="">Air Ticket: Included</a></li>
+                <li><a href="">5 Star Hotels</a></li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Toury Travel Agency. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
