@@ -8,16 +8,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
         body {
             background: white;
             height: auto;
             position: relative;
             background-image:
                 url('img/plane-6511877_1280.jpg');
-            ;
             background-size: cover;
             background-position: center;
             position: relative;
@@ -28,12 +31,47 @@
             flex-direction: column;
             height: 80vh;
         }
+        *{
+     font-family: sans-serif;;
+ }
+ header {
+     display: flex;
+     font-family: Arial, sans-serif;
+     align-items: center;
+     justify-content: space-between;
+     background-color: rgb(1, 6, 73);
+     padding: 10px 30px;
+     height: 120px;
+   }
+ .logo img{
+     height: 120px;
+ }
+ .navbar ul,li,a{
+     display: flex;
+     gap: 25px;
+     list-style: none;
+     text-decoration: none;
+     color:white;
+     font-weight:normal;
+ }
+ .navbar li a:hover{
+     color:orange;
+ }
 
         body {
             margin: 0;
             padding: 0;
         }
-
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content {
+            flex: 1; /* Pushes the footer to the bottom */
+            padding: 20px;
+            text-align: center;
+        }
         .contact-container {
             display: block;
             background: rgb(1, 6, 73);
@@ -111,10 +149,10 @@
 
         footer {
             background-color: rgb(1, 6, 73);
+            padding: 20px;
             color: white;
             text-align: center;
-            padding: 20px;
-
+            position:absolute;
         }
 
         @media (max-width: 768px) {
@@ -147,6 +185,7 @@
                 width: 80%;
             }
         }
+
     </style>
 </head>
 <header>
@@ -186,6 +225,10 @@
             <i class="fab fa-facebook"></i>Toury travellers</a>
         </div>
     </section>
+
+    <footer>
+        <p>&copy; 2025 Toury Travel Agency. All rights reserved.</p>
+    </footer>
 
 </body>
 
