@@ -1,0 +1,245 @@
+<!--ZAINAB AZAM
+22008105031-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hajj Packages</title>
+    <style>
+        header {
+    display: flex;
+    font-family: Arial, sans-serif;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(1, 6, 73);
+    padding: 10px 30px;
+    height: 120px;
+  }
+.logo img{
+    height: 120px;
+}
+.navbar ul {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar ul li {
+    list-style: none;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: normal;
+}
+
+.navbar li a:hover{
+    color:orange;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+        .hajj-divider {
+            display: block;
+            position: relative;
+        }
+
+        .hajj-divider img {
+            height: 50vh;
+            width: 100%;
+            object-fit: cover;
+            overflow: hidden;
+        }
+
+        .Hajj-container h2 {
+            text-align: center;
+        }
+
+        .package-details {
+            margin: 20px;
+            display: block;
+            justify-content: center;
+        }
+
+        .package-details p {
+            font-size: 20px;
+        }
+
+        #h1 p {
+            text-align: center;
+            font-size: 18px;
+            justify-content: center;
+        }
+
+        #h2 {
+            display: block;
+            color: black;
+
+        }
+
+        #h2 ul {
+            margin: 0;
+            padding: 0 20px;
+
+        }
+        
+        #h2 ul li{
+            list-style: circle;
+        }
+
+        #h2 ul li a {
+            color: black;
+            text-decoration: none;
+            line-break: 3px;
+            font-size: 20px;
+        }
+
+        .hotel-wrapper {
+            display: flex;
+            overflow: hidden;
+            max-width: 1000px;
+            margin-top: 30px;
+            margin: 30px auto;
+
+        }
+
+        .hotel-img {
+            display: flex;
+            object-fit: cover;
+        }
+
+        .hotel-img img {
+            max-width: 100%;
+            height: 50vh;
+            padding-left: 10%;
+        }
+
+        .hotel-info {
+            flex: 1;
+            padding: 30px;
+            background-color: #f9f9f9;
+            justify-content: left;
+        }
+
+        .hotel-info h2 {
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .hotel-info p {
+            margin-bottom: 10px 0;
+            color: #444;
+        }
+
+        .price {
+            font-size: 16px;
+            font-weight: bold;
+            color: rgb(1, 6, 73);
+        }
+
+        .button {
+            background-color: white;
+        }
+
+        .button:hover {
+            background-color: orangered;
+        }
+        @media (max-width:768px){
+            .container{
+                flex-direction: column;
+            }
+            .sidebar{
+                order:-1;
+            }
+        }
+        @media(min-width: 769px){
+            .container{
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<header>
+    <div class=logo><img src="img/TA logo.png" alt="Toury logo"></div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="Homepage.html">Home</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="Packages.html">Packages</a></li>
+            <li><a href="login.html">Login </a></li>
+            <li><a href="Contact Us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <div class="hajj-divider">
+        <img src="img/Makkah.jpg " alt="Makkah">
+    </div>
+
+    <section class="Hajj-container">
+        <h2>Packages</h2>
+        <div class="package-details" id="h1">
+            <h2>Fully Facilitated, Trusted, and in Budget Hajj Packages for All Muslims.</h2>
+            <p>Hajj is a mega religious gathering or scared ritual in Islam which millions of Muslims across the world
+                want to have. This sacred obligation is needed to
+                perform once every year in the last month according to the Islamic Calendar. Major religious obligations
+                and practices are performed from 8th to 12th
+                Zill-Hajj, while the total period for this holy practice will be from 20 to 45 days according to the
+                situations and special benefits from the Saudi
+                Arabian Government.
+                <br> Toury bring Umrah Packages and Hajj packages without focusing any of its financial interest. We
+                actually provide you with all
+                facilities and support to make your journey to Hajj easy just to get some rewards and happiness of
+                ALLAH. We have the best and most dedicated Umrah and Hajj management to assist Muslims in Pakistan for
+                making the ability to perform these religious obligations easily.
+            </p>
+
+        </div>
+        <div class="package-details" id="h2">
+            <h2>Package Details</h2>
+            <ul>
+                <li><a href="">Airline ticket included</a></li>
+                <li><a href="">Separate sharing accommodation for ladies and gents at Aziziah Building & Mashair.</a>
+                </li>
+                <li><a href=""> Pilgrim has the guidance of religious scholars throughout the pilgrimage.</a></li>
+                <li><a href="">Private buses (seat by seat).</a></li>
+                <li><a href="">Lunch and dinner provided.</a></li>
+            </ul>
+        </div>
+    </section>
+    <h2 style="text-align: center;">Hotels</h2>
+    <div class="hotel-wrapper">
+
+        <div class="hotel-img">
+            <img src="img/Makkah hotel.jpg" alt="Hotel">
+        </div>
+        <div class="hotel-info">
+            <h2>Al jeddah hotel,KSA</h2>
+            <p>Luxury hotel with minutes away from the kaabah.</p>
+            <p class="price">Price:300$ dollars per night</p>
+            <button class="button">Book Now</button>
+        </div>
+    </div>
+    <div class="hotel-wrapper">
+        <div class="hotel-img">
+            <img src="img/Hotel2.jpg" alt="Hotel">
+        </div>
+
+        <div class="hotel-info">
+            <h2>Al Nusk hotel,KSA</h2>
+            <p>the famous,Al Nusk hotel rented out by several hajjis every hajj.</p>
+            <p class="price">Price:220$ per night</p>
+            <button class="button">Book Now</button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
