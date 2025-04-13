@@ -5,6 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toury</title>
     <link rel="stylesheet" href="Style.css">
+    <style>
+        *{
+     font-family: sans-serif;;
+ }
+ header {
+     display: flex;
+     font-family: Arial, sans-serif;
+     align-items: center;
+     justify-content: space-between;
+     background-color: rgb(1, 6, 73);
+     padding: 10px 30px;
+     height: 120px;
+   }
+ .logo img{
+     height: 120px;
+ }
+ .navbar ul,li,a{
+     display: flex;
+     gap: 25px;
+     list-style: none;
+     text-decoration: none;
+     color:white;
+     font-weight:normal;
+ }
+ .navbar li a:hover{
+     color:orange;
+ }
+ body{
+     margin:auto;
+     font-family: Arial, sans-serif;
+     background-color:white;
+ 
+ }
+ .home{
+    display: flex;
+    flex-direction: column; 
+     background-image: 
+     linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)),
+     url('img/Plane 2.jpg');
+     background-size: cover;
+     background-position: center;
+     position: relative;
+     background-repeat: no-repeat;
+     display: flex;
+     height: 80vh;
+     background-color: rgba(255, 255, 255, 0.4);
+     color: white;
+     justify-content: center;
+     align-items: center;
+     text-align:center ;
+ }
+ .home h1{
+  
+     font-size:30px;
+ }
+ .booking-button {
+    display: block;
+    background-color: navy; 
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none; 
+    border-radius: 8px;
+    margin-top: 10px;
+   
+}
+footer {
+            background-color: rgb(1, 6, 73);
+            color: white;
+            text-align: center;
+            padding: 20px;
+
+        }
+
+    </style>
 </head>
 
     <header>
@@ -12,8 +88,7 @@
         <nav class="navbar">
             <ul>
                 <li><a href="flights.html">Flights</a></li>
-                <li><a href="">Tours</a></li>
-                <li><a href="">Packages</a></li>
+                <li><a href="Packages.html">Packages</a></li>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="Contact Us.html">Contact Us</a></li>
                 <li><a href="aboutus.html">About Us</a></li>
@@ -25,7 +100,14 @@
     <section class="home" id="home">
          
     <h1>Make your flight experience luxury with us</h1>
-    </section>
 
+    <div class="booking-container">
+        <a href="customeflights.html" class="booking-button">Book a flight</a>
+    </div>
+    </section>
 </body>
+    <footer>
+        <p>&copy; 2025 Toury Travel Agency. All rights reserved.</p>
+    </footer>
+
 </html>
