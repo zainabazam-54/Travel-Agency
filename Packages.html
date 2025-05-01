@@ -60,6 +60,7 @@
         body {
             margin: 0;
             padding: 0;
+            background-image: url('Packages_bg');
         }
 
 
@@ -68,12 +69,15 @@
             flex-direction: column;
             position: relative;
             background-color: white;
+            margin-top: 40px;
+            margin-bottom: 10px;
         }
 
         .Package img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
+            width: auto;
+            height: 250px;
+            object-fit: contain;
+            
         }
 
         .Package h2 {
@@ -143,7 +147,8 @@
             justify-content: center;
             align-items: center;
             margin: 20px auto;
-            gap: 20px
+            gap: 20px;
+            transition:transform 0.5s ease,background-color 0.5s ease, color 0.5s ease;
         }
 
         .umrah-button,
@@ -156,6 +161,12 @@
             border-radius: 25px;
             font-size: 18px;
 
+        }
+        .umrah-button:hover,
+        .hajj-button:hover{
+            transform:scale(1.08);
+            background-color: orange;
+            color:black;
         }
 
         @media (max-width:768px) {
@@ -205,10 +216,10 @@
 <body>
     <div class="Package">
         <img src="img/Packages 6.png" alt="Packages">
-        <h2>Packages</h2>
     </div>
 
     <div class="pkg-container">
+        <h2>Packages</h2>
         <a href="umrah.html" class="umrah-button">Umrah packages</a>
         <a href="Hajj.html" class="hajj-button">Hajj packages</a>
     </div>
